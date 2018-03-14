@@ -4,84 +4,67 @@
 //Class -
 //Lab  -
 
-import java.util.Arrays;
-import java.util.Scanner;
-import static java.lang.System.*;
-import static java.util.Arrays.*;
-
-public class Student
-{
+public class Student {
 	private String myName;
 	private Grades myGrades;
-	
-	public Student()
-	{
+
+	public Student() {
 		setName("");
 		setGrades("");
 	}
-	
-	public Student(String name, String gradeList)
-	{
 
-
-
-	}
-	
-	public void setName(String name)
-	{
-
-
-	}	
-	
-	public void setGrades(String gradeList)
-	{
-
-	
-	}
-	
-	public void setGrade(int spot, double grade)
-	{
-
+	public Student(String name, String gradeList) {
+		myGrades = new Grades(gradeList);
+		setName(name);
+		setGrades(gradeList);
 
 	}
 
-	public String getName()
-	{
-		return "";
-	}
-	
-	public int getNumGrades()
-	{
-		return 0;
+	public void setName(String name) {
+		myName = name;
+
 	}
 
-	public double getSum()
-	{
-		return 0.0;
-	}
-	
-	public double getAverage()
-	{
-		return 0.0;
+	public void setGrades(String gradeList) {
+		myGrades.setGrades(gradeList);
 	}
 
-	public double getAverageMinusLow()
-	{
-		return 0.0;
+	public void setGrade(int spot, double grade) {
+		myGrades.setGrade(spot, grade);
+
 	}
-	
-	public double getHighGrade()
-	{
-		return 0.0;		
+
+	public String getName() {
+		return myName;
 	}
-	
-	public double getLowGrade()
-	{
-		return 0.0;	
+
+	public int getNumGrades() {
+		return myGrades.getNumGrades();
 	}
-	
-	public String toString()
-	{
-		return "";
-	}	
+
+	public double getSum() {
+		return myGrades.getSum();
+	}
+
+	public double getAverage() {
+		double average = myGrades.getSum() / myGrades.getNumGrades();
+		return average;
+	}
+
+	public double getAverageMinusLow() {
+		double y = (myGrades.getSum() - myGrades.getLowGrade()) / (myGrades.getNumGrades() - 1);
+		return y;
+	}
+
+	public double getHighGrade() {
+		return myGrades.getHighGrade();
+	}
+
+	public double getLowGrade() {
+		return myGrades.getLowGrade();
+	}
+
+	public String toString() {
+		return myName + " " + myGrades;
+	}
 }

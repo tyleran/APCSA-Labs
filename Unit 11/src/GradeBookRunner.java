@@ -17,24 +17,5 @@ public class GradeBookRunner
 		
 		Scanner keyboard = new Scanner(System.in);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	}		
 }
