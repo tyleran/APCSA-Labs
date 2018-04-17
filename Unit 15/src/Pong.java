@@ -130,7 +130,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 			ball.setXSpeed(0);
 		}
 		// see if the paddles need to be moved
-		if (keys[0] == true)
+		if (keys[0] == true && leftPaddle.getY()>0)
 
 		{
 			// move left paddle up and draw it on the window
@@ -139,13 +139,13 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 				
 
 		
-		if (keys[1] == true)
+		if (keys[1] == true && leftPaddle.getY()<500)
 
 		{
 			// move left paddle down and draw it on the window
 			leftPaddle.moveDownAndDraw(window);
 		}
-		if (keys[2] == true)
+		if (keys[2] == true && rightPaddle.getY()>0)
 
 		{
 			rightPaddle.moveUpAndDraw(window);
