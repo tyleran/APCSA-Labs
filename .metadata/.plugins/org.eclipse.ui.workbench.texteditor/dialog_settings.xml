@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="testMirrorVertical" key="selection"/>
+		<item value="Game Over" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="testMirrorVertical"/>
-			<item value="testMirrorTemple"/>
-			<item value="beach.jpg"/>
-			<item value="sorry"/>
-			<item value="11"/>
-			<item value="you"/>
-			<item value="Sorry"/>
-			<item value="king"/>
+			<item value="game over"/>
+			<item value="you lose"/>
+			<item value="lives"/>
+			<item value="snake"/>
+			<item value="blur"/>
+			<item value="beach"/>
+			<item value="pixelObj"/>
+			<item value="fix"/>
 		</list>
 		<list key="replacehistory">
 			<item value="containsPairSum15"/>
@@ -27,7 +27,7 @@
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="593" key="DIALOG_X_ORIGIN"/>
-		<item value="261" key="DIALOG_Y_ORIGIN"/>
+		<item value="86" key="DIALOG_X_ORIGIN"/>
+		<item value="246" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

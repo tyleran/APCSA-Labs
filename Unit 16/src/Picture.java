@@ -79,6 +79,26 @@ public class Picture extends SimplePicture {
 		return output;
 
 	}
+	
+	public void blur(int x, int y, int w, int h){
+		Pixel[][] pixels = this.getPixels2D();
+		int red = 0;
+		int green = 0;
+		int blue = 0;
+		for(int i = x; i<x+w; i++){
+			for(int j = y; j<y+h;j++){
+				red = (((pixels[i][j].getRed())+ (pixels[i+1][j].getRed()) + (pixels[i+1][j+1].getRed()) + (pixels[i][j+1].getRed())+ (pixels[i-1][j-1].getRed())+ (pixels[i-1][j].getRed()) + (pixels[i][j-1].getRed()) + (pixels[i+1][j-1].getRed()) + (pixels[i-1][j+1].getRed())) /9);
+				green = (((pixels[i][j].getGreen())+ (pixels[i+1][j].getGreen()) + (pixels[i+1][j+1].getGreen()) + (pixels[i][j+1].getGreen())+ (pixels[i-1][j-1].getGreen())+ (pixels[i-1][j].getGreen()) + (pixels[i][j-1].getGreen()) + (pixels[i+1][j-1].getGreen())+ (pixels[i-1][j+1].getGreen())) /9);
+				blue = (((pixels[i][j].getBlue())+ (pixels[i+1][j].getBlue()) + (pixels[i+1][j+1].getBlue()) + (pixels[i][j+1].getBlue())+ (pixels[i-1][j-1].getBlue())+ (pixels[i-1][j].getBlue()) + (pixels[i][j-1].getBlue()) + (pixels[i+1][j-1].getBlue())+ (pixels[i-1][j+1].getBlue())) /9);
+				
+				pixels[i][j].setRed(red);
+				pixels[i][j].setGreen(green);
+				pixels[i][j].setBlue(blue);
+
+			}
+		}
+		
+	}
 
 	/** Method to set the blue to 0 */
 	public void zeroBlue() {
@@ -161,31 +181,7 @@ public class Picture extends SimplePicture {
 		}
 	}
 
-	public void blur(int x, int y, int width, int length) {
-		Pixel[][] pixels = this.getPixels2D();
-		int AB = 0;
-		int AG = 0;
-		int AR = 0;
-		for (int row = x + 1; row < x + width - 1; row++) {
-			for (int col = y + 1; col < y + length - 1; col++) {
-				AB = (pixels[row - 1][col - 1].getBlue() + pixels[row][col - 1].getBlue()
-						+ pixels[row + 1][col - 1].getBlue() + pixels[row - 1][col].getBlue()
-						+ pixels[row + 1][col].getBlue() + pixels[row - 1][col + 1].getBlue()
-						+ pixels[row][col + 1].getBlue() + pixels[row + 1][col + 1].getBlue()) / 8;
-				AG = (pixels[row - 1][col - 1].getGreen() + pixels[row][col - 1].getGreen()
-						+ pixels[row + 1][col - 1].getGreen() + pixels[row - 1][col].getGreen()
-						+ pixels[row + 1][col].getGreen() + pixels[row - 1][col + 1].getGreen()
-						+ pixels[row][col + 1].getGreen() + pixels[row + 1][col + 1].getGreen()) / 8;
-				AR = (pixels[row - 1][col - 1].getRed() + pixels[row][col - 1].getRed()
-						+ pixels[row + 1][col - 1].getRed() + pixels[row - 1][col].getRed()
-						+ pixels[row + 1][col].getRed() + pixels[row - 1][col + 1].getRed()
-						+ pixels[row][col + 1].getRed() + pixels[row + 1][col + 1].getRed()) / 8;
-				pixels[row][col].setBlue(AB);
-				pixels[row][col].setGreen(AG);
-				pixels[row][col].setRed(AR);
-			}
-		}
-	}
+	
 
 	public void fixUnderwater() {
 		Pixel[][] pixels = this.getPixels2D();
@@ -448,6 +444,7 @@ public class Picture extends SimplePicture {
 				else
 					leftPixel.setColor(Color.WHITE);
 			}
+			
 		}
 	}
 
@@ -459,6 +456,8 @@ public class Picture extends SimplePicture {
 		beach.explore();
 		beach.zeroBlue();
 		beach.explore();
+		
+		System.out.println("Tyler An, Period: 2, 4/24/2018, Computer #37");
 	}
 
 } // this } is the end of class Picture, put all new methods before this

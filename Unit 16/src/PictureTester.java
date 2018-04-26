@@ -128,12 +128,11 @@ public class PictureTester {
 		beach.explore();
 	}
 
-	public static void testBlur() {
+	public static void testBlur(int x, int y, int w, int h, int n) {
 		Picture beach = new Picture("C:/Users/ant3384/Desktop/APCSA - Workspace/APCSA-Labs/Unit 16/src/beach.jpg");
-		beach.explore();
-		beach.blur(0, 0, 400, 300);
-		beach.explore();
-		beach.blur(0, 0, 400, 300);
+		for (int i=0;i<n; i++){
+			beach.blur(x, y, w, h);
+		}
 		beach.explore();
 	}
 
@@ -149,20 +148,20 @@ public class PictureTester {
 		// testKeepOnlyRed();
 		// testKeepOnlyGreen();
 		// testNegate();
-		//testGrayscale();
-		// testFixUnderwater();
+		// testGrayscale();
+		 //testFixUnderwater();
 		// testMirrorVertical();
 		// testMirrorTemple();
 		 // testMirrorArms();
 		//testMirrorGull();
-		// testMirrorDiagonal();
+		 //testMirrorDiagonal();
 		// testCollage();
 		 //testCopy();
 		 //testEdgeDetection();
-		 testBlur();
-
-		
-		//
+		 testBlur(200, 200, 200, 200, 2);
+	
+		//-------------------------------------------------------
+	
 		// testEdgeDetection2();
 		// testChromakey();
 		// testEncodeAndDecode();
