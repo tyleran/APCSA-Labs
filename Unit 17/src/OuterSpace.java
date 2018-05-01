@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
 import java.util.ArrayList;
 
 import javax.swing.Timer;
@@ -125,11 +126,11 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable, Collida
 			ship.setPos(1000, 0);
 
 		}
-		if (kills == 10) {
+		if (kills != 0 && kills % 10 == 0) {
 			graphToBack.setFont(new Font("ComicSans", Font.PLAIN, 75));
 			graphToBack.drawString("LEVEL UP", 200, 300);
 			ALIEN_ATTACK = ALIEN_ATTACK / 2;
-
+			
 		}
 
 		for (int j = 0; j < aliens.size(); j++) {
@@ -169,6 +170,11 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable, Collida
 		}
 		ship.draw(graphToBack);
 		twoDGraph.drawImage(back, null, 0, 0);
+	}
+
+	private int getSpeed() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	public void keyPressed(KeyEvent e) {
@@ -220,7 +226,6 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable, Collida
 
 		if (addAlienTimer.isRunning()) {
 			aliens.add(new Alien(x, y, speed));
-			System.out.println("New Snake!" + " " + x + " " + y);
 		}
 	}
 

@@ -27,7 +27,7 @@ public class Alien extends MovingThing {
 		super(x, y);
 		speed = s;
 		try {
-			image = ImageIO.read(new File("C:/Users/ant3384/Desktop/APCSA - Workspace/APCSA-Labs/Unit 17/src/alien.JPG"));
+			image = ImageIO.read(new File("C:/Users/ant3384/Desktop/APCSA - Workspace/APCSA-Labs/Unit 17/src/bug.JPG"));
 		} catch (Exception e) {
 			System.out.println("Alien broke go fix it!!!!!");
 			// feel free to do something here
@@ -42,6 +42,7 @@ public class Alien extends MovingThing {
 	public int getSpeed() {
 		return speed;
 	}
+	
 
 	public void draw(Graphics window) {
 		window.drawImage(image, getX(), getY(), 80, 80, null);
@@ -51,3 +52,4 @@ public class Alien extends MovingThing {
 		return "";
 	}
 }
+
